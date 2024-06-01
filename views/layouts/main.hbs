@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
-  <title>Restaurant List</title>
-</head>
-
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  {{#if cssFile}}
+  <link rel="stylesheet" href="/stylesheets/{{cssFile}}">
+  {{/if}}
+</head> 
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Restaurant List</a>
+  <header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30"
+          height="30" class="d-inline-block align-top" alt="restaurant-list">
+        Find A Restaurant 餐廳清單
+      </a>
     </div>
   </nav>
+  <div class="banner"></div>
+  </header>
   {{{ body }}}
   <script src="/javascripts/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

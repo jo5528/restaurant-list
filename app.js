@@ -3,22 +3,30 @@ const { engine } = require('express-handlebars')
 const app = express()
 const port = 3000
 const restaurants = require('./public/jsons/restaurants.json').results
+// 設定 Handlebars 視圖引擎
 app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
 app.set ('views', './views')
-app.use = express.static('public')
+// 設定靜態檔案資料夾
+app.use(express.static('public'))
+// 設定首頁
 app.get('/', (req, res) => {
   res.redirect('/restaurants')
 })
-app.get('/restaurants', (req, res) => {
-  res.render('index', {restaurants})
+// 搜尋功能觸發時渲染符合條件的餐廳
+app.get('/restaurants', (req, res)=>{
+  const keyword = req.query.search || '' ;
+  const filteredRestaurants = restaurants.filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase())
+ )
+ res.render('index' , {restaurants : filteredRestaurants, keyword})
 })
-
-app.get('/restaurants/:id', (req, res) => {
-  const id = req.params.id
-  res.send(`read restaurant: ${id}`)
+// 點擊該餐廳有更多資料
+app.get('/restaurant/:id', (req, res) => {
+  const id = req.params.id;
+  const restaurant = restaurants.find((res) => res.id.toString() === id)
+  res.render('detail', { restaurant, cssFile: 'detail.css' })
 })
 
 app.listen(port, ()=>{
-  console.log(`express server is running on http:localhost${port}`)
+  console.log(`express server is running on http://localhost:${port}`)
 })
