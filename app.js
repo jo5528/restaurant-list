@@ -14,11 +14,17 @@ app.get('/', (req, res) => {
   res.redirect('/restaurants')
 })
 // 搜尋功能觸發時渲染符合條件的餐廳
-app.get('/restaurants', (req, res)=>{
-  const keyword = req.query.search || '' ;
-  const filteredRestaurants = restaurants.filter(restaurant => restaurant.name.toLowerCase().includes(search.toLowerCase())
- )
- res.render('index' , {restaurants : filteredRestaurants, keyword})
+app.get('/restaurants', (req, res)=>  {
+  const keyword = req.query.search?.trim()
+  const filteredRestaurants = keyword ? restaurants.filter((restaurant => 
+    Object.values(restaurant).some((property) => {
+      if (typeof property === 'string') { 
+       return property.toLowerCase().includes(keyword.toLowerCase())
+    }
+    return false
+  })
+ )) : restaurants // 如果沒有關鍵字，顯示所有的餐廳
+  res.render('index' , {restaurants : filteredRestaurants, keyword})
 })
 // 點擊該餐廳有更多資料
 app.get('/restaurant/:id', (req, res) => {
@@ -27,6 +33,14 @@ app.get('/restaurant/:id', (req, res) => {
   res.render('detail', { restaurant, cssFile: 'detail.css' })
 })
 
+app.get('/favorite' , (req, res) => {
+ const favoriteRestaurants = restaurants.filter(res => res.contains('.fav'))
+ res.render('favorite' , {restaurants: favoriteRestaurants })
+})
+
 app.listen(port, ()=>{
   console.log(`express server is running on http://localhost:${port}`)
 })
+
+
+

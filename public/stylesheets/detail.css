@@ -45,6 +45,9 @@ header {
   color: white;
 }
 
+.about {
+ font-family: 'Times New Roman', Times, serif;
+}
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
@@ -67,6 +70,7 @@ header {
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 @media screen and (max-width: 768px) {
   .restaurant-show-title {

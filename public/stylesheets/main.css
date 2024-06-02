@@ -3,7 +3,7 @@ header {
 }
 
 .navbar .navbar-brand {
-  color: #4592af;
+  color: #86a7b3;
 }
 
 .navbar .navbar-brand:hover {
@@ -23,7 +23,7 @@ header {
 .search-bar .search-bar-outer {
   margin: 0 auto;
   max-width: 680px;
-  background-color:#eeeee4;
+  background-color: whitesmoke;
   border-radius: 8px;
   padding: 20px 30px;
   border: 0;
@@ -32,7 +32,7 @@ header {
 }
 
 .search-bar .search-bar-inner h4 {
-  color: #76b5c5;
+  color: #101010;
 }
 
 .form-control::placeholder {
@@ -59,16 +59,21 @@ header {
 }
 
 .card-title {
+  color:#101010;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .restaurant-category {
-  color: #666666;
+  color: rgb(90, 102, 192);
   font-size: 0.8rem;
 }
 
+.restaurant-location {
+   color: #666666;
+   font-size: 0.6rem;
+}
 .restaurant-show-title {
   position: relative;
   top: -100px;
