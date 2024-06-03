@@ -8,14 +8,12 @@
 <body>
 <h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
   <div class="container">
-     <div class="col-4">
-       <button class="btn back-btn mb-3" type="button" id="back-button">
+    <div class="row">
+       <button class="btn back-btn mb-3 col-4" type="button" id="back-button">
          <i class="fas fa-arrow-left"></i>
          Back
         </button>
-       </div>
       
-       </div>
       <div class="row">
        <div class="col-12 col-md-10 mx-auto">
        <p class="about">About the Restaurant</p>
@@ -54,20 +52,12 @@
     </div>
   </div>
 </div>
+</div>
+</div>
 <script>
   document.getElementById('back-button').addEventListener('click', function () {
     window.location.href = '/';
   })
-   document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.btn.fav').forEach(button => {
-        button.addEventListener('click', function (event) {
-          event.preventDefault(); // 防止默认行为，例如链接点击
-          const card = this.closest('.card');
-          card.classList.toggle('fav'); // 切换收藏状态
-          this.classList.toggle('active'); // 切换按钮状态
-        });
-      });
-    });
 </script>
 </body>
 

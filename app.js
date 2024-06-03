@@ -7,11 +7,13 @@ const restaurants = require('./public/jsons/restaurants.json').results
 app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
 app.set ('views', './views')
+
 // 設定靜態檔案資料夾
 app.use(express.static('public'))
+
 // 設定首頁
 app.get('/', (req, res) => {
-  res.redirect('/restaurants')
+  res.redirect('/restaurants');
 })
 // 搜尋功能觸發時渲染符合條件的餐廳
 app.get('/restaurants', (req, res)=>  {
@@ -31,11 +33,6 @@ app.get('/restaurant/:id', (req, res) => {
   const id = req.params.id;
   const restaurant = restaurants.find((res) => res.id.toString() === id)
   res.render('detail', { restaurant, cssFile: 'detail.css' })
-})
-
-app.get('/favorite' , (req, res) => {
- const favoriteRestaurants = restaurants.filter(res => res.contains('.fav'))
- res.render('favorite' , {restaurants: favoriteRestaurants })
 })
 
 app.listen(port, ()=>{
