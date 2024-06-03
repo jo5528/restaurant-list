@@ -38,16 +38,22 @@ npm install
 4. 在 Terminal 輸入指令，安裝 nodemon 套件
 
 ```
-nodemon app.js 
+npm install -g nodemon
 ```
 
-5. 啟動伺服器，執行 app.js 檔案
+5. 讀取JSOＮ檔案，將種子資料載入
+   
+```
+ node models/seeds/Seeder.js
+```
+  
+6. 啟動伺服器，執行 app.js 檔案
 
 ```
-node app.js
+nodemon app.js
 ```
 
-6. 當Terminal出現以下字樣，表示伺服器已啟動
+7. 當Terminal出現以下字樣，表示伺服器已啟動
 `The Express server is running on http://localhost:3000`
 於瀏覽器輸入[http://localhost:3000](http://localhost:3000)，即可開始瀏覽網站
 
