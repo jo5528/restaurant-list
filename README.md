@@ -48,13 +48,15 @@ node app.js
 ```
 
 6. 當Terminal出現以下字樣，表示伺服器已啟動
-
 `The Express server is running on http://localhost:3000`
+於瀏覽器輸入[http://localhost:3000](http://localhost:3000)，即可開始瀏覽網站
 
-7. 於瀏覽器輸入`http://localhost:3000`，即可開始網站
-
-
-
+## 使用工具
+ 開發環境：[Visual Studio Code](https://visualstudio.microsoft.com/zh-hant/)   
+ 執行環境：[Node.js](https://nodejs.org/en)  
+ 應用程式架構：[Express](https://www.npmjs.com/package/express)   
+ 模板引擎：[Express-Handlebars](https://www.npmjs.com/package/express-handlebars)   
+ 
 ## Contributor 專案開發人員
 
 > [Joanna Hsiao](https://github.com/jo5528)
