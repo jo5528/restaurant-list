@@ -4,15 +4,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test":"standard && node my-tests.js"
   },
   "keywords": [],
   "author": "joanna",
   "license": "ISC",
   "description": "restaurants-info-list",
   "dependencies": {
-    "body-parser": "^1.20.2",
     "express": "^4.19.2",
-    "express-handlebars": "^7.1.2"
+    "express-handlebars": "^7.1.2",
+    "standard": "*"
   }
 }
